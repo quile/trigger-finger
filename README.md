@@ -4,9 +4,9 @@ Node script to watch a directory tree for changes and execute a command.  Super 
 
 For example:
 
-    node trigger-finger.js --dir="/Users/kyledawkins/Projects/nike-dtc/backend/src/main/resources" \
-                           --dir="/Users/kyledawkins/Projects/nike-dtc/backend/src/main/webapp/" \
-                           --command='cd ~/Projects/nike-dtc/backend; mvn compile resources:resources'
+    node trigger-finger.js --dir="/Users/kyledawkins/Projects/foobar/backend/src/main/resources" \
+                           --dir="/Users/kyledawkins/Projects/foobar/backend/src/main/webapp/" \
+                           --command='cd ~/Projects/foobar/backend; mvn compile resources:resources'
 
 ## Installation
 
