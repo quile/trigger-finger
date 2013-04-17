@@ -25,15 +25,14 @@ function handleChanges( dir, event, filename ) {
 }
 
 function createWatchers(dir) {
+  console.log("Watching " + dir);
   var walker = walk.walk( dir, { followLinks: false } );
+  fs.watch( dir, function(event, filename) {
+    handleChanges(dir, event, filename)
+  });
   walker.on("directories", function( root, stats, next ) {
-
     stats.forEach( function( s ) {
       createWatchers( root + "/" + s.name );
-    });
-
-    fs.watch( dir, function(event, filename) {
-      handleChanges(dir, event, filename)
     });
   });
 }
